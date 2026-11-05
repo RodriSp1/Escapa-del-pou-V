@@ -1,0 +1,94 @@
+<!-- estructura de html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escapa del Pou Asesino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- datos -->
+    <div class="datos-estudiante">
+        <p><strong>Estudiante:</strong> Rodrigo Santini</p>
+        <p><strong>Carrera:</strong> Ingeniería en Tecnología de Software</p>
+        <p><strong>Semestre:</strong> 5to Semestre</p>
+        <p><strong>Matrícula:</strong> 68994</p>
+        <p><strong>Materia:</strong> Diseño Web</p>
+        <p><strong>Docente:</strong> José C. Aguilar Cánepa</p>
+    </div>
+
+    <div class="pantalla-juego">
+        <header>
+            <h1>Escapa del Pou Asesino</h1>
+            <div class="panel-puntos">
+                <p>Bacachitos: <span id="puntos">0</span></p>
+                <button id="btn-opciones">Opciones</button>
+            </div>
+        </header>
+
+        <main class="contenedor-canvas">
+            <canvas id="juego" width="600" height="400"></canvas>
+        </main>
+    </div>
+
+    <!-- pantalla de Inicio -->
+    <div id="modal-inicio">
+        <div class="caja-modal">
+            <h2>Escapa del Pou Asesino</h2>
+            <p>Junta todos los bacachitos posibles antes de que te atrapen.</p>
+            <button id="btn-empezar-juego">Empezar a Jugar</button>
+        </div>
+    </div>
+
+    <!-- panel de Opciones y configuración -->
+    <div id="modal-config" class="oculto">
+        <div class="caja-modal">
+            <h3>Ajustes del Juego</h3>
+            
+            <label>Velocidad de tu personaje:</label>
+            <input type="range" id="vel-jugador" min="3" max="9" value="5">
+
+            <label>Velocidad del Pou Asesino:</label>
+            <input type="range" id="vel-enemigo" min="1" max="5" value="2" step="0.5">
+
+            <label>Tamaño de tu personaje:</label>
+            <input type="range" id="tam-jugador" min="15" max="35" value="25">
+
+            <label>Tamaño del bacachito:</label>
+            <input type="range" id="tam-disco" min="10" max="30" value="18">
+
+            <label>Puntos por bacachito:</label>
+            <input type="range" id="valor-puntos" min="1" max="5" value="1">
+
+            <label>Fondo de Meme:</label>
+            <select id="fondo-meme">
+                <option value="mono">Meme del Mono</option>
+                <option value="elmo">Elmo en llamas</option>
+                <option value="meme67">Meme del 67</option>
+            </select>
+
+            <label>Color del borde:</label>
+            <select id="color-borde">
+                <option value="#38bdf8">Azul Neón</option>
+                <option value="#ef4444">Rojo Fuego</option>
+                <option value="#10b981">Verde Esmeralda</option>
+            </select>
+
+            <button id="btn-cerrar-config">Aplicar y Jugar</button>
+        </div>
+    </div>
+
+    <!-- pantalla de perder -->
+    <div id="modal-gameover" class="oculto">
+        <div class="caja-modal">
+            <h2>Perdiste Six sevensito</h2>
+            <p>Conseguiste <span id="puntos-finales">0</span> bacachitos</p>
+            <button id="btn-reintentar">Volver a Jugar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

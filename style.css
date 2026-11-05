@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+/* datos del juego wei */
+.datos-estudiante {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+.datos-estudiante strong {
+    color: #cbd5e1;
+}
+
+.pantalla-juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f172a;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 1.1rem;
+}
+
+.panel-puntos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+}
+
+#btn-opciones, #btn-cerrar-config, #btn-reintentar, #btn-empezar-juego {
+    background-color: #e11d48;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#btn-opciones:hover, #btn-cerrar-config:hover, #btn-reintentar:hover, #btn-empezar-juego:hover {
+    background-color: #be123c;
+}
+
+.contenedor-canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#juego {
+    background: #000;
+    border: 3px solid #38bdf8;
+    border-radius: 8px;
+    display: block;
+}
+
+/* ocultar los modales */
+.oculto {
+    display: none !important;
+}
+
+/* ventana de modales flotantes */
+#modal-inicio, #modal-config, #modal-gameover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.caja-modal {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 320px;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+    border: 2px solid #475569;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.caja-modal label {
+    font-size: 0.85rem;
+    text-align: left;
+    margin-top: 4px;
+}
+
+.caja-modal input, .caja-modal select {
+    padding: 6px;
+    border-radius: 5px;
+    background: #0f172a;
+    color: white;
+    border: 1px solid #475569;
+    width: 100%;
+}
+
+/* ajuste del recuadro del juego */
+@media (max-width: 900px) {
+    .datos-estudiante {
+        position: static;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    body {
+        flex-direction: column;
+    }
+}
